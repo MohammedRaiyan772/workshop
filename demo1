@@ -1,2 +1,3 @@
-print("hello guys")
-print("new updates")
+def hello():
+    """print("hello guys")print("new updates")"""
+    return ("hello")
