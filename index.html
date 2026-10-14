@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Raiyan Motors - Car Showroom</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            color: #222;
+        }
+
+        /* Navigation */
+        nav {
+            background: #111;
+            color: white;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            color: #e63946;
+            font-size: 28px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #e63946;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 500px;
+            background:
+                linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7")
+                center/cover;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h2 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 21px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e63946;
+            color: white;
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 17px;
+        }
+
+        .btn:hover {
+            background: #c1121f;
+        }
+
+        /* Cars Section */
+        .cars {
+            padding: 60px 8%;
+        }
+
+        .cars h2 {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        .car-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .car-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+
+        .car-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .car-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .car-info {
+            padding: 20px;
+        }
+
+        .car-info h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .car-info p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 21px;
+            font-weight: bold;
+            color: #e63946;
+            margin-bottom: 15px;
+        }
+
+        /* About */
+        .about {
+            background: #111;
+            color: white;
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            line-height: 1.7;
+            color: #ddd;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            margin: 10px;
+            font-size: 18px;
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero-content h2 {
+                font-size: 38px;
+            }
+
+            .hero-content p {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <h1>Raiyan Motors</h1>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#cars">Cars</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h2>Drive Your Dream</h2>
+
+            <p>Premium Cars. Great Prices. Trusted Service.</p>
+
+            <a href="#cars" class="btn">Explore Cars</a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Cars Section -->
+    <section class="cars" id="cars">
+
+        <h2>Featured Cars</h2>
+
+        <div class="car-container">
+
+            <!-- Car 1 -->
+            <div class="car-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70"
+                    alt="Sports Car">
+
+                <div class="car-info">
+
+                    <h3>Porsche 911</h3>
+
+                    <p>Luxury sports car with powerful performance.</p>
+
+                    <div class="price">₹1.50 Crore</div>
+
+                    <a href="#" class="btn">View Details</a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Car 2 -->
+            <div class="car-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1555215695-3004980ad54e"
+                    alt="BMW">
+
+                <div class="car-info">
+
+                    <h3>BMW M4</h3>
+
+                    <p>Performance, luxury and modern technology.</p>
+
+                    <div class="price">₹1.48 Crore</div>
+
+                    <a href="#" class="btn">View Details</a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Car 3 -->
+            <div class="car-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8"
+                    alt="Mercedes">
+
+                <div class="car-info">
+
+                    <h3>Mercedes-Benz</h3>
+
+                    <p>Elegant design with premium comfort.</p>
+
+                    <div class="price">₹1.20 Crore</div>
+
+                    <a href="#" class="btn">View Details</a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Car 4 -->
+            <div class="car-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1542362567-b07e54358753"
+                    alt="Lamborghini">
+
+                <div class="car-info">
+
+                    <h3>Lamborghini</h3>
+
+                    <p>High-performance supercar built for speed.</p>
+
+                    <div class="price">₹4.50 Crore</div>
+
+                    <a href="#" class="btn">View Details</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section class="about" id="about">
+
+        <h2>About Raiyan Motors</h2>
+
+        <p>
+            Welcome to Raiyan Motors. We provide a wide range of
+            premium, luxury and performance cars. Our goal is to make
+            your car-buying experience simple, transparent and enjoyable.
+        </p>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>📍 Bangalore, India</p>
+
+        <p>📞 +91 98765 43210</p>
+
+        <p>✉️ contact@raiyanmotors.com</p>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>© 2026 Raiyan Motors. All Rights Reserved.</p>
+
+    </footer>
+
+</body>
+</html>
