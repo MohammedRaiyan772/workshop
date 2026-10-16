@@ -1,0 +1,6 @@
+vpc1_cidr = "172.16.0.0/16"
+vpc1_name = "VPC-1"
+sub1_cidr = "172.16.0.0/24"
+sub1_name = "subnet1"
+RT1_name  = "RT1"
+igw1_name = "igw1"
