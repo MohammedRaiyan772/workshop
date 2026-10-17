@@ -4,3 +4,7 @@ variable "sub1_name" {}
 variable "sub1_cidr" {}
 variable "igw1_name" {}
 variable "RT1_name" {}
+variable "ami1_id" {}
+variable "key1_name" {}
+variable "ec2-1_type" {}
+variable "ec2-1_name" {}

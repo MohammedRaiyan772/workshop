@@ -32,3 +32,13 @@ resource "aws_internet_gateway" "igw1" {
     Name = var.igw1_name
   }
 }
+resource "aws_instance" "ec2-1" {
+  ami                         = var.ami1_id
+  key_name                    = var.key1_name
+  instance_type               = var.ec2-1_type
+  subnet_id                   = aws_subnet.sub1.id
+  associate_public_ip_address = true
+  tags = {
+    Name = var.ec2-1_name
+  }
+}
