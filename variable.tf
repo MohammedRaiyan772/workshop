@@ -8,3 +8,6 @@ variable "ami1_id" {}
 variable "key1_name" {}
 variable "ec2-1_type" {}
 variable "ec2-1_name" {}
+variable "bucket_name" {}
+variable "s3_name" {}
+variable "s3_env" {}
