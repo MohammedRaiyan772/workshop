@@ -57,3 +57,42 @@ resource "aws_s3_bucket" "s3-1" {
     env  = var.s3_env
   }
 }
+#aws_dynamoDB_table
+resource "aws_dynamodb_table" "table" {
+  name         = var.db_name
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "emp"
+
+  attribute {
+    name = "emp"
+    type = "S"
+  }
+}
+locals {
+  employees = {
+    101 = {
+      name       = "Raiyan"
+      department = "devops"
+    }
+    102 = {
+      name       = "ahmed"
+      department = "HR"
+    }
+    103 = {
+      name       = "khalid"
+      department = "cloud"
+    }
+  }
+}
+resource "aws_dynamodb_table_item" "employee" {
+  for_each = local.employees
+
+  table_name = aws_dynamodb_table.table.name
+  hash_key   = "emp"
+
+  item = jsonencode({
+    emp        = { S = each.key }
+    name       = { S = each.value.name }
+    department = { S = each.value.department }
+  })
+}

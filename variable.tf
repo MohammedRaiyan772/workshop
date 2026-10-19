@@ -11,3 +11,5 @@ variable "ec2-1_name" {}
 variable "bucket_name" {}
 variable "s3_name" {}
 variable "s3_env" {}
+variable "db_name" {}
+
