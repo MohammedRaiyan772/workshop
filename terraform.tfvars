@@ -12,3 +12,10 @@ bucket_name = "raiyan12"
 s3_name     = "bucket1"
 s3_env      = "dev"
 db_name     = "table1"
+LB_name     = "LB1"
+subnet_ids = [
+  "subnet-01af1061e06390466",
+  "subnet-0b3baf622f09aafb5"
+]
+security_group_id = ["sg-04539ae44acab47f9"]
+vpc_id = "vpc-0e4bd321f83c84661"

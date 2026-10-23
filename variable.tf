@@ -12,4 +12,7 @@ variable "bucket_name" {}
 variable "s3_name" {}
 variable "s3_env" {}
 variable "db_name" {}
-
+variable "LB_name" {}
+variable "subnet_ids" {}
+variable "security_group_id" {}
+variable "vpc_id" {}
