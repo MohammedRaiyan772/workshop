@@ -20,3 +20,4 @@ subnet_ids = [
 security_group_id = ["sg-04539ae44acab47f9"]
 vpc_id            = "vpc-0e4bd321f83c84661"
 public_subnet_id  = "subnet-08a4b749add16e401"
+vpc-1_id          = "vpc-0e4bd321f83c84661"

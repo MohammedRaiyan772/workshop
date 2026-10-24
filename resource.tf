@@ -153,3 +153,18 @@ resource "aws_nat_gateway" "nat1" {
   }
   depends_on = [aws_eip.nat_eip]
 }
+#vpc_peering
+data "aws_vpc" "vpc1" {
+  id = var.vpc-1_id
+}
+data "aws_vpc" "VPC_1" {
+  id = aws_vpc.vpc1.id
+}
+resource "aws_vpc_peering_connection" "peer" {
+  vpc_id      = data.aws_vpc.vpc1.id
+  peer_vpc_id = data.aws_vpc.VPC_1.id
+  auto_accept = true
+  tags = {
+    Name = "peering1"
+  }
+}
