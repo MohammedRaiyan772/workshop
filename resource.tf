@@ -137,3 +137,19 @@ resource "aws_lb_listener" "http" {
     target_group_arn = aws_lb_target_group.my_tg.arn
   }
 }
+#allocate_nat eip
+resource "aws_eip" "nat_eip" {
+  domain = "vpc"
+  tags = {
+    Name = "nat_eip"
+  }
+}
+#Nat_gateway
+resource "aws_nat_gateway" "nat1" {
+  allocation_id = aws_eip.nat_eip.id
+  subnet_id     = var.public_subnet_id
+  tags = {
+    Name = "NAT_Gateway"
+  }
+  depends_on = [aws_eip.nat_eip]
+}
