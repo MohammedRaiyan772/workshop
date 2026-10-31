@@ -261,3 +261,16 @@ resource "aws_db_instance" "mysql_db" {
     Env  = "dev"
   }
 }
+resource "aws_subnet" "subnet1" {
+  vpc_id = aws_vpc.vpc1.id
+
+  count = length(var.zone)
+
+  availability_zone = element(var.zone, count.index)
+
+  cidr_block = element(var.subnet_cidr, count.index)
+
+  tags = {
+    Name = "sub0${count.index + 1}"
+  }
+}

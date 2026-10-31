@@ -65,3 +65,5 @@ variable "rds_password" {
   type        = string
   sensitive   = true
 }
+variable "zone" {}
+variable "subnet_cidr" {}
